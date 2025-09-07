@@ -1,0 +1,8 @@
+
+> cat("En mi opinion, y a traves de mis resultados, puedo indicar que el hecho de que un departamento
++     tenga su area redonda (que termine en 0),  ..." ... [TRUNCATED] 
+En mi opinion, y a traves de mis resultados, puedo indicar que el hecho de que un departamento
+    tenga su area redonda (que termine en 0), no está afectando o sobreestimando su mando. Digo
+    aquello puesto que la comparativa final gracias al modelo empleado mando un precio promedio no muy
+    distante del real, e incluso siendo un poco inferior al mismo.
+> sink()

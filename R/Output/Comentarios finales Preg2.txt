@@ -1,0 +1,32 @@
+
+> cat("INTERPRETACIÓN TEÓRICA\n")
+INTERPRETACIÓN TEÓRICA
+
+> cat("- Con p pequeño: Modelo puede tener underfitting (sesgo alto)\n")
+- Con p pequeño: Modelo puede tener underfitting (sesgo alto)
+
+> cat("- Con p grande: Modelo hace overfitting (varianza alta)\n")
+- Con p grande: Modelo hace overfitting (varianza alta)
+
+> cat("- R² ajustado ayuda a encontrar el equilibrio sesgo-varianza óptimo\n")
+- R² ajustado ayuda a encontrar el equilibrio sesgo-varianza óptimo
+
+> cat("- La relación real solo involucra 2 características (X1 + X2)\n")
+- La relación real solo involucra 2 características (X1 + X2)
+
+> cat("Algunas conclusiones del ejercicio:\n")
+Algunas conclusiones del ejercicio:
+
+> cat("- Más parámetros ≠ mejor modelo\n")
+- Más parámetros ≠ mejor modelo
+
+> cat("- R² de entrenamiento es optimista con muchas características\n")
+- R² de entrenamiento es optimista con muchas características
+
+> cat("- R² ajustado penaliza la complejidad innecesaria\n")
+- R² ajustado penaliza la complejidad innecesaria
+
+> cat("- Validación out of sample es crucial para detectar overfitting\n")
+- Validación out of sample es crucial para detectar overfitting
+
+> sink()
