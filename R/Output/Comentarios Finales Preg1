@@ -1,6 +1,0 @@
-Este script demuestra el Teorema de Frisch-Waugh-Lovell (FWL) mediante
-La estimación OLS completa que incluye todas las variables X1 y X2 y el procedimiento FWL en dos etapas que
-Residualiza tanto y como X1 respecto a X2, además, estima la relación entre estos residuos.
-La comparación muestra que ambas estimaciones de beta1 son idénticas. Esto prueba que el coeficiente de X1 en la regresión múltiple puede
-obtenerse mediante regresión parcial después de 'limpiar' tanto la variable dependiente como la independiente de los efectos de X2.
-Los gráficos ilustran visualmente la diferencia entre la relación <cruda> (sin controlar) y la relación parcial (controlando por X2).
