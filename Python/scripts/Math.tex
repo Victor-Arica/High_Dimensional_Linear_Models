@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\title{Demonstration of the Frisch-Waugh-Lovell (FWL) theorem}
+\author{\bfseries Authors \\
+    Alexander Gómez \\
+    Joseph Amaya \\
+    Julio Trejo \\
+    Víctor Arica
+}
+\date{\today}
+\begin{document}
+\maketitle
+\section{Multiple Linear Regression Model}
+Consider the linear regression model:
+\begin{equation}
+y = X_1\beta_1 + X_2\beta_2 + u
+\end{equation}
+Where $y$ is the vector of outcomes, $X_1$ is a matrix  of regressors of interest, $X_2$ is a  matrix of control variables, $\beta_1$ and $\beta_2$ are the coefficient vectors, and $u$ is the vector of errors.
+
+\section{Solve for $\hat{\beta_2}$ Estimator}
+We start by finding the expression for $\hat{\beta_2}$ in terms of $\hat{\beta_1}$, which is derived from multiplying both sides of the equation by $(X_2'X_2)^{-1}X_2'$. Solving for $\hat{\beta_2}$, we get:
+\begin{equation}
+\hat{\beta_2} = (X_2'X_2)^{-1}X_2'y - (X_2'X_2)^{-1}X_2'X_1\hat{\beta_1} + (X_2'X_2)^{-1}X_2'u
+\end{equation}
+Given that the vector of errors is orthogonal to the control variables ($X_2'u = 0$), the last term becomes zero. Therefore, the estimator simplifies to:
+\begin{equation}
+\hat{\beta_2} = (X_2'X_2)^{-1}X_2'y - (X_2'X_2)^{-1}(X_2'X_1)\hat{\beta_1}
+\end{equation}
+Note that we use $\hat{\beta_1}$ instead of $\beta_1$, as we are working with the estimators.
+
+\section{Derivation of the $\hat{\beta_1}$ Estimator}
+By multiplying both sides of the equation by $X_1'$, we have:
+\begin{equation}
+(X_1'X_1)\hat{\beta_1} + (X_1'X_2)\hat{\beta_2} = X_1'y
+\end{equation}
+We substitute the expression for $\hat{\beta_2}$ into this equation:
+\begin{equation}
+(X_1'X_1)\hat{\beta_1} + (X_1'X_2)\left[(X_2'X_2)^{-1}X_2'y - (X_2'X_2)^{-1}(X_2'X_1)\hat{\beta_1}\right] = X_1'y
+\end{equation}
+Expanding and grouping the terms containing $\hat{\beta_1}$ and $y$:
+\begin{equation}
+(X_1'X_1)\hat{\beta_1} - (X_1'X_2)(X_2'X_2)^{-1}(X_2'X_1)\hat{\beta_1} = X_1'y - (X_1'X_2)(X_2'X_2)^{-1}X_2'y
+\end{equation}
+Factoring out $\hat{\beta_1}$ and $y$:
+\begin{equation}
+\left[(X_1'X_1) - (X_1'X_2)(X_2'X_2)^{-1}(X_2'X_1)\right]\hat{\beta_1} = \left[X_1' - (X_1'X_2)(X_2'X_2)^{-1}X_2'\right]y
+\end{equation}
+Now we can factor out $X_1'$ from both sides of the equation and $X_1$ from the left side. The equation is rewritten as:
+\begin{equation}
+\left[X_1'(I - X_2(X_2'X_2)^{-1}X_2')X_1\right]\hat{\beta_1} = X_1'(I - X_2(X_2'X_2)^{-1}X_2')y
+\end{equation}
+We introduce the matrix $M_{X_2} =I - X_2(X_2'X_2)^{-1}X_2'$. Substituting $M_{X_2}$:
+\begin{equation}
+(X_1'M_{X_2}X_1)\hat{\beta_1} = X_1'M_{X_2}y
+\end{equation}
+Solving for $\hat{\beta_1}$, we get the OLS (Ordinary Least Squares) estimator for $\beta_1$:
+\begin{equation}
+\hat{\beta_1} = (X_1'M_{X_2}X_1)^{-1}X_1'M_{X_2}y
+\end{equation}
+Given that $M_{X_2}$ is idempotent we have:
+\begin{equation}
+\hat{\beta_1} = (X_1'M_{X_2}'M_{X_2}X_1)^{-1}X_1'M_{X_2}'M_{X_2}y
+\end{equation}
+Finally we have:
+\begin{equation}
+\hat{\beta_1} = (\tilde{X_1}^{'}\tilde{X_1})^{-1}\tilde{X_1}^{'}\tilde{y}
+\end{equation}
+where $\tilde{y}$=$M_{X_2}y$ and $\tilde{X_1}$=$M_{X_2}X_1$
+\end{document}
